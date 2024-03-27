@@ -62,7 +62,16 @@ resource "aws_instance" "web" {
   root_block_device {
     encrypted = true
   }
+
+  metadata_options {
+    http_tokens         = "required"
+    http_endpoint       = "enabled"
+    http_put_response_hop_limit = 1
+    http_endpoint       = "enabled"
+  }
 }
+
+
 
 
 resource "aws_security_group" "web-sg" {
