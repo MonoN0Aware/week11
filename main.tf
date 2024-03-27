@@ -67,7 +67,7 @@ resource "aws_instance" "web" {
     http_tokens         = "required"
     http_endpoint       = "enabled"
     http_put_response_hop_limit = 1
-    http_endpoint       = "enabled"
+
   }
 }
 
