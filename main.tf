@@ -58,7 +58,12 @@ resource "aws_instance" "web" {
               echo "Hello World" > /var/www/html/index.html
               systemctl restart apache2
               EOF
+
+  root_block_device {
+    encrypted = true
+  }
 }
+
 
 resource "aws_security_group" "web-sg" {
   name = "bolu-sg"
